@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from movies import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.movie_list, name='movie_list'),
+    path('movie/<int:movie_id>/', views.movie_detail, name='movie_details'),
 ]
